@@ -1,4 +1,5 @@
-import { Search } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faShip } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
@@ -18,8 +19,8 @@ export default function Navigation({ onSearch }: NavigationProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center h-16 gap-4">
           <div className="flex items-center gap-2">
-            <span className="text-3xl">😺</span>
-            <span className="font-bold text-xl bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">CatFace</span>
+            <FontAwesomeIcon icon={faShip} className="text-3xl text-blue-500" />
+            <span className="font-bold text-xl bg-gradient-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent">CatFace</span>
           </div>
 
           <NavigationMenu className="hidden md:flex">
@@ -43,7 +44,7 @@ export default function Navigation({ onSearch }: NavigationProps) {
           </NavigationMenu>
 
           <div className="flex-1 max-w-xl relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <FontAwesomeIcon icon={faSearch} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
             <Input
               className="pl-10"
               placeholder="Search models, datasets, users..."
