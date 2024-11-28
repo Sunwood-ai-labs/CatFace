@@ -16,7 +16,7 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <Navigation onSearch={setSearchQuery} />
       
       <main className="container mx-auto px-4 py-6">
