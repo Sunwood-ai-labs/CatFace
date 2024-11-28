@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faShip } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faCat } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
@@ -19,7 +19,7 @@ export default function Navigation({ onSearch }: NavigationProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center h-16 gap-4">
           <div className="flex items-center gap-2">
-            <FontAwesomeIcon icon={faShip} className="text-3xl text-blue-500" />
+            <FontAwesomeIcon icon={faCat} className="text-3xl text-blue-500" />
             <span className="font-bold text-xl bg-gradient-to-r from-blue-300 to-blue-600 bg-clip-text text-transparent">CatFace</span>
           </div>
 
