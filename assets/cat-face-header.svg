@@ -2,17 +2,14 @@
   <defs>
     <style>
       <![CDATA[
-        @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&display=swap');
         .title-text {
-          font-family: "Jaro", "Kaisei Decol";
-          font-optical-sizing: auto;
-          font-weight: 400;
-          font-style: normal;
+          font-family: "Kaisei Decol", serif;
+          font-weight: 700;
         }
         .subtitle-text {
           font-family: "Kaisei Decol", serif;
           font-weight: 400;
-          font-style: normal;
         }
       ]]>
     </style>
