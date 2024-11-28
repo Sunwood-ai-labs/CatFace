@@ -1,131 +1,100 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       <![CDATA[
-        @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Kaisei+Decol&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&display=swap');
         .title-text {
-          font-family: "Jaro", sans-serif;
-          font-optical-sizing: auto;
-          font-weight: 400;
-          font-style: normal;
-        }
-        .subtitle-text {
-          font-family: "Kaisei Decol", serif;
-          font-weight: 400;
-          font-style: normal;
+          font-family: 'Kaisei Decol', serif;
+          font-weight: 700;
         }
       ]]>
     </style>
-    
-    <!-- 深い海のグラデーション -->
-    <linearGradient id="deepSeaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#082f49">
+
+    <!-- 背景グラデーション -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0f2fe">
         <animate attributeName="stop-color" 
-                 values="#082f49;#0c4a6e;#082f49" 
+                 values="#e0f2fe;#bae6fd;#e0f2fe" 
                  dur="8s" 
                  repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" style="stop-color:#0c4a6e">
+      <stop offset="100%" style="stop-color:#bae6fd">
         <animate attributeName="stop-color" 
-                 values="#0c4a6e;#0369a1;#0c4a6e" 
+                 values="#bae6fd;#7dd3fc;#bae6fd" 
                  dur="8s" 
                  repeatCount="indefinite"/>
       </stop>
     </linearGradient>
 
-    <!-- 光の効果のグラデーション -->
-    <linearGradient id="lightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#7dd3fc">
+    <!-- テキストグラデーション -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0369a1">
         <animate attributeName="stop-color" 
-                 values="#7dd3fc;#38bdf8;#7dd3fc" 
+                 values="#0369a1;#0284c7;#0369a1" 
                  dur="4s" 
                  repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" style="stop-color:#38bdf8">
+      <stop offset="100%" style="stop-color:#0284c7">
         <animate attributeName="stop-color" 
-                 values="#38bdf8;#0ea5e9;#38bdf8" 
+                 values="#0284c7;#0ea5e9;#0284c7" 
                  dur="4s" 
                  repeatCount="indefinite"/>
       </stop>
     </linearGradient>
 
-    <!-- 水中の光のグロー効果 -->
-    <filter id="underwaterGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    <!-- グロー効果 -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
       <feComponentTransfer>
-        <feFuncA type="linear" slope="0.8"/>
+        <feFuncA type="linear" slope="0.6"/>
       </feComponentTransfer>
       <feMerge>
         <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <!-- 気泡のアニメーション用 -->
-    <circle id="bubble" r="3" fill="#7dd3fc" opacity="0.6"/>
   </defs>
 
-  <!-- 背景 -->
-  <rect width="800" height="200" rx="20" ry="20" fill="url(#deepSeaGradient)"/>
+  <!-- 背景（角丸） -->
+  <rect width="800" height="200" rx="40" ry="40" fill="url(#bgGradient)"/>
 
-  <!-- 水中の波効果 -->
-  <g opacity="0.2">
-    <path d="M0,50 Q200,30 400,50 T800,50" 
-          stroke="url(#lightGradient)" 
-          stroke-width="2" 
-          fill="none">
-      <animate attributeName="d" 
-               values="M0,50 Q200,30 400,50 T800,50;M0,50 Q200,70 400,50 T800,50;M0,50 Q200,30 400,50 T800,50" 
-               dur="15s" 
-               repeatCount="indefinite"/>
-    </path>
-    <path d="M0,100 Q200,80 400,100 T800,100" 
-          stroke="url(#lightGradient)" 
-          stroke-width="2" 
-          fill="none">
-      <animate attributeName="d" 
-               values="M0,100 Q200,80 400,100 T800,100;M0,100 Q200,120 400,100 T800,100;M0,100 Q200,80 400,100 T800,100" 
-               dur="12s" 
-               repeatCount="indefinite"/>
-    </path>
-  </g>
-
-  <!-- 気泡のアニメーション -->
-  <use href="#bubble" x="100" y="180">
-    <animate attributeName="y" 
-             values="180;20" 
-             dur="8s" 
-             repeatCount="indefinite"/>
-  </use>
-  <use href="#bubble" x="300" y="180">
-    <animate attributeName="y" 
-             values="180;20" 
+  <!-- 装飾的な波線 -->
+  <path d="M0,100 Q200,80 400,100 T800,100" 
+        stroke="url(#textGradient)" 
+        stroke-width="2" 
+        fill="none" 
+        opacity="0.3">
+    <animate attributeName="d" 
+             values="M0,100 Q200,80 400,100 T800,100;M0,100 Q200,120 400,100 T800,100;M0,100 Q200,80 400,100 T800,100" 
              dur="10s" 
              repeatCount="indefinite"/>
-  </use>
-  <use href="#bubble" x="500" y="180">
-    <animate attributeName="y" 
-             values="180;20" 
-             dur="7s" 
-             repeatCount="indefinite"/>
-  </use>
+  </path>
 
-  <!-- メインコンテンツ -->
-  <g transform="translate(50,50)" filter="url(#underwaterGlow)">
-    <!-- 猫のアイコン -->
-    <circle cx="50" cy="50" r="40" fill="#7dd3fc"/>
-    <path d="M25,25 L10,5 L40,20 Z" fill="#7dd3fc"/>
-    <path d="M75,25 L90,5 L60,20 Z" fill="#7dd3fc"/>
-    <ellipse cx="35" cy="45" rx="5" ry="7" fill="#0c4a6e"/>
-    <ellipse cx="65" cy="45" rx="5" ry="7" fill="#0c4a6e"/>
-    <path d="M47,55 L53,55 L50,60 Z" fill="#0369a1"/>
+  <!-- 猫のアイコン -->
+  <g transform="translate(50,40) scale(0.8)" filter="url(#glow)">
+    <!-- 顔 -->
+    <circle cx="80" cy="80" r="60" fill="#0369a1"/>
+    <!-- 耳 -->
+    <path d="M40,40 L20,10 L60,30 Z" fill="#0369a1"/>
+    <path d="M120,40 L140,10 L100,30 Z" fill="#0369a1"/>
+    <!-- 目 -->
+    <ellipse cx="60" cy="70" rx="8" ry="12" fill="#fff"/>
+    <ellipse cx="100" cy="70" rx="8" ry="12" fill="#fff"/>
+    <!-- 鼻 -->
+    <path d="M75,85 L85,85 L80,95 Z" fill="#fb7185"/>
+    <!-- ヒゲ -->
+    <line x1="30" y1="90" x2="70" y2="85" stroke="#0ea5e9" stroke-width="2"/>
+    <line x1="30" y1="100" x2="70" y2="95" stroke="#0ea5e9" stroke-width="2"/>
+    <line x1="90" y1="85" x2="130" y2="90" stroke="#0ea5e9" stroke-width="2"/>
+    <line x1="90" y1="95" x2="130" y2="100" stroke="#0ea5e9" stroke-width="2"/>
   </g>
 
-  <!-- タイトルテキスト -->
-  <text x="150" y="90" class="title-text" font-size="48" fill="#7dd3fc" filter="url(#underwaterGlow)">
-    CatFace
+  <!-- プロジェクト名 -->
+  <text x="200" y="100" class="title-text" font-size="48" fill="url(#textGradient)" filter="url(#glow)">
+    猫登録システム
   </text>
-  <text x="150" y="130" class="subtitle-text" font-size="20" fill="#38bdf8" filter="url(#underwaterGlow)">
-    AI Model Repository Platform
+  <text x="200" y="140" class="title-text" font-size="24" fill="url(#textGradient)" opacity="0.8">
+    Cat Registry System
   </text>
 </svg>
