@@ -10,7 +10,7 @@ interface ModelCardProps {
 
 export default function ModelCard({ model }: ModelCardProps) {
   return (
-    <Card className="hover:shadow-lg transition-shadow">
+    <Card className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-gradient-to-br from-white to-purple-50/30">
       <CardHeader className="flex flex-row items-center gap-4">
         <Avatar>
           <AvatarImage src={model.owner.avatar} />
