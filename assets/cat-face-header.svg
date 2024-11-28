@@ -4,7 +4,7 @@
       <![CDATA[
         @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Kaisei+Decol&display=swap');
         .title-text {
-          font-family: "Jaro", "Kaisei Decol", sans-serif;
+          font-family: "Jaro", "Kaisei Decol";
           font-optical-sizing: auto;
           font-weight: 400;
           font-style: normal;
