@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/cat-face-header.svg" alt="CatFace Header" width="100%" style="max-width: 800px;" />
+
 # 🐱 CatFace
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
